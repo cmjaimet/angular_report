@@ -245,7 +245,7 @@ pnCorepress.controller( 'ctrlCorepress', function( $scope, $http ) {
 	Object.keys( $scope.markets ).forEach( function( _elem, _idx ) {
 		//var _url = '/json/' + _elem + '.json';
 		// need cross domain version
-		var _url = 'json/json.php?mkt=' + _elem;
+		var _url = 'json/' + _elem + '.json';
 		$http( {
 			method: 'GET',
 			url: _url
