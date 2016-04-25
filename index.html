@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Angular Corepress</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="report.js"></script>
+<link href="report.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div ng-app="pnCorepress">
+
+	<div ng-controller="ctrlCorepress">
+
+		<ul id="pn_cp_menu_markets">
+			<li ng-repeat="( mslug, mobj ) in markets" ng-market="{{ mslug }}" ng-click="getReport($event)" id="pn_cp_market_{{ mslug }}" ng-class="$first ? 'chosen' : ''">{{ mobj.name }}</li>
+		</ul>
+
+		<ul id="pn_cp_menu_modes">
+			<li ng-repeat="(mslug, mname ) in modes" ng-mode="{{ mslug }}" ng-click="getReport($event)" id="pn_cp_mode_{{ mslug }}" ng-class="$first ? 'chosen' : ''">{{ mname }}</li>
+		</ul>
+
+		<div id="pn_cp_report_wrapper">
+			<table id="pn_cp_report_table">
+				<tr ng-repeat="row_data in table_data || getReport()" ng-if="$index < 1" class="pn_cp_head">
+					<th ng-repeat="(lbl, elem) in row_data" key="{{ elem.id }}" ng-if="'Sort' !== lbl" class="pn_cp_th">{{ lbl }}</th>
+				</tr>
+				<tr ng-repeat="row_data in table_data | orderBy:'+Sort'">
+					<td ng-repeat="(lbl, elem) in row_data" key="{{ elem.key }}" ng-if="'Sort' !== lbl" 
+						class="{{ '' === ( elem.label + elem.img ) ? 'pn_cp_td_empty' : '' }}">
+						<a href="{{ elem.url }}" class="{{ '' === elem.url ? 'hide_link' : '' }}" target="_blank">
+							<span class="pn_cp_table_label">{{ elem.label }}</span>
+							<img ng-src="{{ elem.img }}" ng-if="'' === elem.img ? false : true" class="pn_cp_table_img" />
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+<input type="button" id="pn_cp_report_export" value="Export to Excel" class="pn_cp_button" ng-click="tableToExcel()" />
+
+<div id="footer">
+	<div id="footer_copy">
+		Corepress by Postmedia
+	</div>
+	<div id="footer_mode">
+		<input type="checkbox" id="pn_cp_offline_mode" value="1" />Offline mode
+	</div>
+</div>
+
+<a href="" id="pn_cp_download_link"></a>
+
+
+
+
+
+
+
+	</div>
+
+</div>
+
+</body>
+</html>
