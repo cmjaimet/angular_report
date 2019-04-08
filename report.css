@@ -1,0 +1,42 @@
+a { text-decoration: none; }
+a.hide_link { pointer-events: none; cursor: default; color: #000; }
+img.pn_cp_table_img { width:100px; height:auto; max-width: 100px; max-height: 100px; }
+.pn_cp_table_label { float: none; }
+/*
+th.pn_cp_th { text-align: left !important; }
+*/
+
+/** menu **/
+ul { float:left; padding: 0px; -webkit-padding-start: 0px; -webkit-margin-before: 0px; -webkit-margin-after: 0px; }
+ul#pn_cp_menu_markets, ul#pn_cp_menu_modes { border-bottom: 4px solid #1b5e20; width: 100%;}
+ul#pn_cp_menu_markets { border-top: 4px solid #1b5e20; }
+ul#pn_cp_menu_modes { margin-bottom:20px; }
+
+ul#pn_cp_menu_markets li, ul#pn_cp_menu_modes li { display:inline-block; float: left; padding:6px; margin:0px; }
+ul#pn_cp_menu_markets li:after, ul#pn_cp_menu_modes li:after { content: ' |'; }
+ul#pn_cp_menu_markets li:last-child:after, ul#pn_cp_menu_modes li:last-child:after { content: ''; }
+
+li.chosen { background-color: #e8f5e9;}
+
+
+#pn_cp_report_table { border-collapse: collapse; padding:0px 6px 0px 6px;border:2px solid #000 !important; }
+#pn_cp_report_table tr {}
+#pn_cp_report_table tr td { text-align:left; border: 1px solid #DDD; }
+#pn_cp_report_table tr td:first-child { text-align:left; }
+#pn_cp_report_table tr.pn_cp_head th { font-size:16px; font-weight: bold; font-family: Arial; background-color: #c8e6c9; color: #333; text-align: left; padding: 4px; }
+#pn_cp_report_table tr td.pn_cp_td_empty { background-color:#EEE; }
+/*
+#pn_cp_report_table tr td.pn_cp_subhead { font-size:16px; font-weight: bold; font-family: Arial; background-color: #e8f5e9; color: #333; text-align: left; padding: 4px; }
+#pn_cp_report_table tr td.pn_cp_table_td_str { text-align:left; }
+#pn_cp_report_table tr td.pn_cp_table_td_num { text-align:center; }
+#pn_cp_report_table tr td.pn_cp_table_td_bool { text-align:center; }
+#pn_cp_report_table tr td img { max-width: 100px; max-height:100px; }
+*/
+
+#footer { width: 100%; min-height: 36px; background-color: #1b5e20; }
+#footer #footer_copy { color: #FFF; width: 40%; float:left; padding: 10px; }
+#footer #footer_mode { color: #FFF; width: 40%; float:right; text-align:right; padding: 10px; }
+
+a#pn_cp_download_link { display:none; visibility:hidden; }
+.pn_cp_button { background-color: #2E7D32 !important; color: #FFFFFF !important; margin: 12px; font-size: 12px; float: right; }
+
